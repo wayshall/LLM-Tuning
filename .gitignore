@@ -13,3 +13,4 @@ web_demo/resource
 eval/
 evaluate.ipynb
 my_templates.py
+.vscode

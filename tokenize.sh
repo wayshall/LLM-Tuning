@@ -1,9 +1,9 @@
 CUDA_VISIBLE_DEVICES=0 python tokenize_dataset_rows.py \
-    --model_checkpoint internlm/internlm-chat-7b \
-    --input_file aspect_sentiment_test_base.json\
-    --prompt_key prompt \
-    --target_key output \
-    --save_name aspect_sentiment_test_base-internlm-chat-7b \
+    --model_checkpoint chatglm2-6b \
+    --input_file test.json\
+    --prompt_key q \
+    --target_key a \
+    --save_name test \
     --max_seq_length 2000 \
     --skip_overlength False
 
