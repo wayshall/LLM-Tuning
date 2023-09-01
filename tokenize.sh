@@ -1,6 +1,6 @@
 CUDA_VISIBLE_DEVICES=0 python tokenize_dataset_rows.py \
     --model_checkpoint chatglm2-6b \
-    --input_file test.json\
+    --input_file test.jsonl \
     --prompt_key q \
     --target_key a \
     --save_name test \

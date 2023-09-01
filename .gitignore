@@ -13,3 +13,5 @@ eval/
 evaluate.ipynb
 my_templates.py
 .vscode
+chatglm2-6b
+data/tokenized_data
