@@ -1,5 +1,4 @@
 /temp
-/data
 /runs
 /weights
 lora-infer.py
