@@ -36,10 +36,12 @@
 #     --report_to wandb \
 #     --run_name original-eval2k-0811-gby
 
-# transformers==4.29.2
+# transformers==4.29.2，不要使用4.30，否则会抛错
+# learning_rate 通常，你可以尝试一些常见的初始学习率值，例如0.1、0.01、0.001等，并根据模型和任务的性质来选择。更复杂的模型可能需要较小的学习率，而更大的学习率可能适用于简单的模型。
+# lora_rank 如果你有大量的训练数据，较低的秩可能更容易实现，因为模型可以从更多的数据中学习。然而，对于小数据集，可能需要更高的秩来保留更多的信息。
 CUDA_VISIBLE_DEVICES=0,1 python chatglm2_lora_tuning.py \
     --tokenized_dataset test \
-    --lora_rank 4 \
+    --lora_rank 8 \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 10 \
     --num_train_epochs 2 \
