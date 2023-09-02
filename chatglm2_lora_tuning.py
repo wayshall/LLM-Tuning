@@ -121,7 +121,7 @@ def main():
         torch.cuda.empty_cache()
         print(f'memory_allocated {torch.cuda.memory_allocated()}')
         print('loading real model...')
-        model = AutoModel.from_pretrained("THUDM/chatglm2-6b", trust_remote_code=True, device_map=new_hf_device_map)
+        model = AutoModel.from_pretrained("chatglm2-6b", trust_remote_code=True, device_map=new_hf_device_map)
         print(model.hf_device_map)
 
    

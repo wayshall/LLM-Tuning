@@ -36,7 +36,7 @@
 #     --report_to wandb \
 #     --run_name original-eval2k-0811-gby
 
-
+# transformers==4.29.2
 CUDA_VISIBLE_DEVICES=0,1 python chatglm2_lora_tuning.py \
     --tokenized_dataset test \
     --lora_rank 4 \
