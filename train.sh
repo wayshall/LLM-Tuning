@@ -39,12 +39,16 @@
 # transformers==4.29.2，不要使用4.30，否则会抛错
 # learning_rate 通常，你可以尝试一些常见的初始学习率值，例如0.1、0.01、0.001等，并根据模型和任务的性质来选择。更复杂的模型可能需要较小的学习率，而更大的学习率可能适用于简单的模型。
 # lora_rank 如果你有大量的训练数据，较低的秩可能更容易实现，因为模型可以从更多的数据中学习。然而，对于小数据集，可能需要更高的秩来保留更多的信息。
+# num_train_epochs：训练的总 epoch 数。模型将在训练数据上迭代这么多次，每次迭代都被称为一个 epoch。
+# 在深度学习中，多个 epoch 的训练通常是必要的，因为模型需要多次观察训练数据来学习不同的特征和模式。通常情况下，随着 epoch 数的增加，模型的性能会逐渐提高，直到达到一个性能收敛的稳定点。
+# 需要注意的是，num_train_epochs 的值应该根据任务、数据集的大小和模型的复杂性来选择。通常，如果数据集较大或模型复杂，可能需要更多的 epoch 来让模型充分学习。一方面，训练太多的 epoch 可能会导致过拟合，另一方面，训练太少的 epoch 可能会导致模型未能充分学习数据。
+# 因此，在选择 num_train_epochs 时，通常需要通过实验和验证集的性能来进行调整，以找到最佳的 epoch 数以获得最佳的模型性能。
 CUDA_VISIBLE_DEVICES=0,1 python chatglm2_lora_tuning.py \
     --tokenized_dataset test \
     --lora_rank 8 \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 10 \
-    --num_train_epochs 2 \
+    --num_train_epochs 10 \
     --save_steps 200 \
     --save_total_limit 2 \
     --learning_rate 1e-4 \
